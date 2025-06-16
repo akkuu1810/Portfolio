@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import ProfileImage from '../assets/profile-image.png'
 
-export default function Home({scrollToProjects }) {
+export default function Home({scrollToProjects,scrollToContact  }) {
   return (
     <section className="w-full min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-20 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-black transition-all">
       <div className="flex-1 text-center md:text-left space-y-6">
@@ -37,6 +37,7 @@ export default function Home({scrollToProjects }) {
       borderColor: '#4a943c',
     },
   }}
+  onClick={scrollToContact}
 >
   Contact Me
 </Button>

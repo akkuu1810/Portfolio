@@ -14,6 +14,8 @@ function App() {
   useCustomCursor();
   const [blockPositions, setBlockPositions] = useState([]);
   const projectsRef = useRef(null);
+  const contactRef = useRef(null);
+
 
   return (
     <>
@@ -21,10 +23,10 @@ function App() {
       <FloatingBlocks count={15} onReady={setBlockPositions}/>
       <CatSprite path={blockPositions.slice(0, 6)} />
       <main className="bg-white dark:bg-black text-black dark:text-white" style={{ position: 'relative', zIndex: 1 }}>
-        <Home scrollToProjects={() => projectsRef.current?.scrollIntoView({ behavior: 'smooth' })}/>
+        <Home scrollToProjects={() => projectsRef.current?.scrollIntoView({ behavior: 'smooth' })} scrollToContact={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })}/>
         <AboutMe/>
         <Projects ref={projectsRef}/>
-        <Contact />
+        <Contact ref={contactRef} />
       </main>
     </>
   )

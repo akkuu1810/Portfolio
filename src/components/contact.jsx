@@ -1,10 +1,12 @@
 import { Mail, Phone } from 'lucide-react';
 import '../assets/react.png'
 import '../assets/js.png'
+import { forwardRef } from 'react';
 
-export default function Contact() {
+const Contact = forwardRef((props, ref) => {
   return (
     <section 
+    ref={ref}
       id="contact"
       className="w-full min-h-screen bg-gradient-to-b from-gray-100 to-white dark:from-black dark:to-gray-900 px-6 md:px-16 py-20 flex items-center justify-center"
     >
@@ -43,4 +45,5 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+});
+ export default Contact;
