@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 export default function Fall({ fadeOut = false }) {
   const canvasRef = useRef(null);
@@ -6,7 +6,7 @@ export default function Fall({ fadeOut = false }) {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
     let leaves = [];
@@ -19,7 +19,7 @@ export default function Fall({ fadeOut = false }) {
         speedY: Math.random() * 1 + 0.5,
         angle: Math.random() * 360,
         rotationSpeed: Math.random() * 2 - 1,
-        color: `hsl(${Math.random() * 30 + 20}, 80%, 50%)`, // warm oranges/reds
+        color: `hsl(${Math.random() * 30 + 20}, 80%, 50%)`,
       });
     }
 
@@ -29,7 +29,14 @@ export default function Fall({ fadeOut = false }) {
       ctx.moveTo(0, 0);
 
       // Left lobe
-      ctx.bezierCurveTo(-lobe * 1.5, -lobe * 0.5, -lobe * 1.5, -lobe * 2, 0, -lobe * 1.5);
+      ctx.bezierCurveTo(
+        -lobe * 1.5,
+        -lobe * 0.5,
+        -lobe * 1.5,
+        -lobe * 2,
+        0,
+        -lobe * 1.5
+      );
 
       // Right lobe
       ctx.bezierCurveTo(lobe * 1.5, -lobe * 2, lobe * 1.5, -lobe * 0.5, 0, 0);
@@ -87,9 +94,9 @@ export default function Fall({ fadeOut = false }) {
       ref={canvasRef}
       onTransitionEnd={handleTransitionEnd}
       className={`fixed top-0 left-0 z-0 pointer-events-none transition-opacity duration-1000 ${
-        fadeOut ? 'opacity-0' : 'opacity-100'
+        fadeOut ? "opacity-0" : "opacity-100"
       }`}
-      style={{ width: '100%', height: '100%' }}
+      style={{ width: "100%", height: "100%" }}
     />
   );
 }

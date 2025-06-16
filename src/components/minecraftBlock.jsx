@@ -1,7 +1,7 @@
-import blockImage from '../assets/minecraft.png';
-import '../styles/minecraftBlock.scss'
+import blockImage from "../assets/minecraft.png";
+import "../styles/minecraftBlock.scss";
 
-export default function MinecraftBlock({ className = '', style }) {
+export default function MinecraftBlock({ className = "", style }) {
   return (
     <img
       src={blockImage}

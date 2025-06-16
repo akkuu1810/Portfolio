@@ -1,31 +1,33 @@
-// import MinecraftBlock from './MinecraftBlock';
-import { useEffect, useState } from 'react';
-import MinecraftBlock from './minecraftBlock';
+import { useEffect, useState } from "react";
+import MinecraftBlock from "./minecraftBlock";
 
 function randomBetween(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-export default function FloatingBlocks({ count = 10, onReady  }) {
+export default function FloatingBlocks({ count = 10, onReady }) {
   const [blocks, setBlocks] = useState([]);
 
- useEffect(() => {
+  useEffect(() => {
     const newBlocks = Array.from({ length: count }).map(() => {
       const isLeft = Math.random() < 0.5;
       return {
         top: randomBetween(0, 90),
-        left: isLeft
-          ? randomBetween(0, 15)
-          : randomBetween(85, 100),
+        left: isLeft ? randomBetween(0, 15) : randomBetween(85, 100),
         delay: randomBetween(0, 4),
         duration: randomBetween(3, 6),
         size: randomBetween(80, 140),
       };
     });
     setBlocks(newBlocks);
-    if (onReady) onReady(newBlocks.map(({ top, left }) => ({ top: `${top}vh`, left: `${left}vw` })));
+    if (onReady)
+      onReady(
+        newBlocks.map(({ top, left }) => ({
+          top: `${top}vh`,
+          left: `${left}vw`,
+        }))
+      );
   }, [count]);
-  
 
   return (
     <>
@@ -34,18 +36,17 @@ export default function FloatingBlocks({ count = 10, onReady  }) {
           key={i}
           className="floating-block"
           style={{
-            position: 'fixed',
+            position: "fixed",
             top: `${block.top}vh`,
             left: `${block.left}vw`,
             animationDelay: `${block.delay}s`,
             animationDuration: `${block.duration}s`,
             width: `${block.size}px`,
             height: `${block.size}px`,
-            pointerEvents: 'none',
-            userSelect: 'none',
-            zIndex: 9999, // ⬅️ make this very high to always stay on top
+            pointerEvents: "none",
+            userSelect: "none",
+            zIndex: 9999,
           }}
-          
         />
       ))}
     </>

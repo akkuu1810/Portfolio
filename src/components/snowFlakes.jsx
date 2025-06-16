@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 export default function Snowfall({ fadeOut = false }) {
   const canvasRef = useRef(null);
@@ -7,7 +7,7 @@ export default function Snowfall({ fadeOut = false }) {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
 
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
@@ -16,7 +16,7 @@ export default function Snowfall({ fadeOut = false }) {
       width = canvas.width = window.innerWidth;
       height = canvas.height = window.innerHeight;
     };
-    window.addEventListener('resize', resize);
+    window.addEventListener("resize", resize);
 
     for (let i = 0; i < 150; i++) {
       snowflakes.current.push({
@@ -29,7 +29,7 @@ export default function Snowfall({ fadeOut = false }) {
 
     const draw = () => {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
       ctx.beginPath();
 
       for (let i = 0; i < snowflakes.current.length; i++) {
@@ -66,7 +66,7 @@ export default function Snowfall({ fadeOut = false }) {
     animate();
 
     return () => {
-      window.removeEventListener('resize', resize);
+      window.removeEventListener("resize", resize);
       cancelAnimationFrame(animationId);
     };
   }, []);
@@ -84,9 +84,9 @@ export default function Snowfall({ fadeOut = false }) {
       ref={canvasRef}
       onTransitionEnd={handleTransitionEnd}
       className={`fixed top-0 left-0 z-0 pointer-events-none transition-opacity duration-1000 ${
-        fadeOut ? 'opacity-0' : 'opacity-100'
+        fadeOut ? "opacity-0" : "opacity-100"
       }`}
-      style={{ width: '100%', height: '100%' }}
+      style={{ width: "100%", height: "100%" }}
     />
   );
 }

@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
-export default function Spring({ fadeOut = false, onFadeOutEnd  }) {
+export default function Spring({ fadeOut = false, onFadeOutEnd }) {
   const canvasRef = useRef(null);
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     let width = (canvas.width = window.innerWidth);
     let height = (canvas.height = window.innerHeight);
     let petals = [];
@@ -27,8 +27,7 @@ export default function Spring({ fadeOut = false, onFadeOutEnd  }) {
       ctx.save();
       ctx.translate(x, y);
       ctx.rotate(rotation);
-      ctx.fillStyle = 'rgba(219, 112, 147, 0.75)'; // Pale Violet Red with 75% opacity
-
+      ctx.fillStyle = "rgba(219, 112, 147, 0.75)"; // Pale Violet Red with 75% opacity
 
       for (let i = 0; i < 5; i++) {
         ctx.beginPath();
@@ -79,7 +78,7 @@ export default function Spring({ fadeOut = false, onFadeOutEnd  }) {
   const handleTransitionEnd = () => {
     if (fadeOut) {
       setVisible(false);
-      onFadeOutEnd?.(); 
+      onFadeOutEnd?.();
     }
   };
 
@@ -90,9 +89,9 @@ export default function Spring({ fadeOut = false, onFadeOutEnd  }) {
       ref={canvasRef}
       onTransitionEnd={handleTransitionEnd}
       className={`fixed top-0 left-0 z-0 pointer-events-none transition-opacity duration-1000 ${
-        fadeOut ? 'opacity-0' : 'opacity-100'
+        fadeOut ? "opacity-0" : "opacity-100"
       }`}
-      style={{ width: '100%', height: '100%' }}
+      style={{ width: "100%", height: "100%" }}
     />
   );
 }

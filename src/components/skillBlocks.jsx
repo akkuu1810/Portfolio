@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import ReactBlock from '../assets/react.png'; // use the generated images
-import JSBlock from '../assets/js.png';
-import '../styles/skillBlocks.scss'
-
+import React, { useEffect, useState } from "react";
+import ReactBlock from "../assets/react.png";
+import JSBlock from "../assets/js.png";
+import "../styles/skillBlocks.scss";
 
 const BLOCKS = [ReactBlock, JSBlock];
 
@@ -30,7 +29,9 @@ export default function FloatingBlocks3D({ count = 8 }) {
         top: Math.random() * 90,
         left: Math.random() * 90,
         size: `${40 + Math.random() * 40}px`,
-        animation: ['float-slow', 'float-medium', 'float-fast'][Math.floor(Math.random() * 3)],
+        animation: ["float-slow", "float-medium", "float-fast"][
+          Math.floor(Math.random() * 3)
+        ],
       }));
 
     setBlocks(generateBlocks());

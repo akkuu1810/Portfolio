@@ -1,10 +1,10 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from "react";
 
-import Fall from './Fall';
-import Spring from './spring';
-import Snowfall from './snowFlakes';
+import Fall from "./Fall";
+import Spring from "./spring";
+import Snowfall from "./snowFlakes";
 
-const SEASONS = ['spring', 'summer', 'fall', 'winter'];
+const SEASONS = ["spring", "summer", "fall", "winter"];
 const TRANSITION_DURATION = 1000;
 
 export default function SeasonalEffect() {
@@ -32,11 +32,11 @@ export default function SeasonalEffect() {
 
   const renderSeason = (season, isFading = false) => {
     switch (season) {
-      case 'spring':
+      case "spring":
         return <Spring fadeOut={isFading} key={`${season}-${isFading}`} />;
-      case 'fall':
+      case "fall":
         return <Fall fadeOut={isFading} key={`${season}-${isFading}`} />;
-      case 'winter':
+      case "winter":
         return <Snowfall fadeOut={isFading} key={`${season}-${isFading}`} />;
       default:
         return null;
@@ -45,8 +45,7 @@ export default function SeasonalEffect() {
 
   return (
     <>
-      {prevSeasonIndex !== null &&
-        renderSeason(SEASONS[prevSeasonIndex], true)}
+      {prevSeasonIndex !== null && renderSeason(SEASONS[prevSeasonIndex], true)}
       {renderSeason(SEASONS[seasonIndex], false)}
     </>
   );

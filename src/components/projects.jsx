@@ -1,4 +1,3 @@
-// src/components/Projects.jsx
 import { forwardRef, useState } from "react";
 import {
   Card,
@@ -117,6 +116,9 @@ const Projects = forwardRef((props, ref) => {
                       backgroundColor: '#4a943c',
                     },
                     color: '#fff',
+                    fontFamily: '"Press Start 2P", monospace',
+    fontSize: '0.75rem', 
+    textTransform: 'none', 
                   }}
                   size="small"
                   onClick={() => setOpenIndex(index)}
