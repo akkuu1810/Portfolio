@@ -21,20 +21,22 @@ function App() {
       <FloatingBlocks count={15} onReady={setBlockPositions} />
       <CatSprite path={blockPositions.slice(0, 6)} />
       <main
-        className="bg-white dark:bg-black text-black dark:text-white"
+        className="text-black dark:text-white"
         style={{ position: "relative", zIndex: 1 }}
       >
-        <Home
-          scrollToProjects={() =>
-            projectsRef.current?.scrollIntoView({ behavior: "smooth" })
-          }
-          scrollToContact={() =>
-            contactRef.current?.scrollIntoView({ behavior: "smooth" })
-          }
-        />
-        <AboutMe />
-        <Projects ref={projectsRef} />
-        <Contact ref={contactRef} />
+        <div className="w-full max-w-5xl 2xl:max-w-7xl mx-auto px-4">
+          <Home
+            scrollToProjects={() =>
+              projectsRef.current?.scrollIntoView({ behavior: "smooth" })
+            }
+            scrollToContact={() =>
+              contactRef.current?.scrollIntoView({ behavior: "smooth" })
+            }
+          />
+          <AboutMe />
+          <Projects ref={projectsRef} />
+          <Contact ref={contactRef} />
+        </div>
       </main>
     </>
   );

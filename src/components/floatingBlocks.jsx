@@ -13,7 +13,9 @@ export default function FloatingBlocks({ count = 10, onReady }) {
       const isLeft = Math.random() < 0.5;
       return {
         top: randomBetween(0, 90),
-        left: isLeft ? randomBetween(0, 15) : randomBetween(85, 100),
+        left: randomBetween(0, 10) < 5
+        ? randomBetween(0, 5) 
+        : randomBetween(95, 100),     
         delay: randomBetween(0, 4),
         duration: randomBetween(3, 6),
         size: randomBetween(80, 140),
