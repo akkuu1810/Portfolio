@@ -1,0 +1,19 @@
+@keyframes float {
+    0% { transform: translateY(0) rotateY(0deg); }
+    50% { transform: translateY(-15px) rotateY(15deg); }
+    100% { transform: translateY(0) rotateY(0deg); }
+  }
+  
+  .animate-float {
+    animation-name: float;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  
+  .floating-block {
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-name: float;
+  }
+  
