@@ -105,7 +105,8 @@ export default function AboutMe() {
               <h3 className="text-xl font-bold text-[#5EAF4B]">
                 {achieve.title}
               </h3>
-              <p className="text-sm text-gray-300">{achieve.description}</p>
+              <p className="text-sm text-gray-300 leading-relaxed">{achieve.description}</p>
+
             </div>
           ))}
         </div>
