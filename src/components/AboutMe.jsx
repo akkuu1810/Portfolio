@@ -1,5 +1,4 @@
 import { Chip } from "@mui/material";
-import MinecraftBlock from "./minecraftBlock";
 
 const skills = [
   "JavaScript",
@@ -102,10 +101,10 @@ export default function AboutMe() {
               className="relative bg-[#1e1e1e] dark:bg-[#121212] border border-[#5EAF4B] rounded-xl p-4 text-white shadow-lg transform transition-all hover:scale-105 shimmer-glow"
             >
               <div className="text-3xl mb-2">{achieve.icon}</div>
-              <h3 className="text-xl font-bold text-[#5EAF4B]">
+              <h3 className="text-l font-bold text-[#5EAF4B]">
                 {achieve.title}
               </h3>
-              <p className="text-sm text-gray-300 leading-relaxed">{achieve.description}</p>
+             <p className="text-sm text-gray-300 leading-relaxed">{achieve.description}</p>
 
             </div>
           ))}
